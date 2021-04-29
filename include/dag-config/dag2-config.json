@@ -1,0 +1,5 @@
+{
+    "DagId": "dag_file_2",
+    "Schedule": "'@daily'",
+    "Query":"'SELECT * FROM table2;'"
+}
