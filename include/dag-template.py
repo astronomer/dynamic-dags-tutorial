@@ -14,5 +14,6 @@ dag = DAG(dag_id,
 with dag:
     t1 = PostgresOperator(
         task_id='postgres_query',
-        postgres_conn_id=connection_id
+        postgres_conn_id=connection_id,
         sql=querytoreplace)
+        
