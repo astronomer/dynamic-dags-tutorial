@@ -16,7 +16,8 @@ for filename in os.listdir(config_filepath):
     
 
     for line in fileinput.input(new_filename, inplace=True):
-        line.replace("dag_id", "'"+config['DagId']+"'")
-        line.replace("scheduletoreplace", config['Schedule'])
-        line.replace("querytoreplace", config['Query'])
+        line = line.replace("dag_id", "'"+config['DagId']+"'")
+        line = line.replace("scheduletoreplace", config['Schedule'])
+        line = line.replace("querytoreplace", config['Query'])
         print(line, end="")
+        
