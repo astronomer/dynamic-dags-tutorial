@@ -1,18 +1,20 @@
-from airflow import DAG
-from airflow.operators.postgres_operator import PostgresOperator
-from datetime import datetime
+from airflow.decorators import dag
+from airflow.operators.bash import BashOperator
+from pendulum import datetime
 
-default_args = {'owner': 'airflow',
-                'start_date': datetime(2021, 1, 1)
-                }
 
-dag = DAG(dag_id,
-            schedule_interval=scheduletoreplace,
-            default_args=default_args,
-            catchup=False)
+@dag(
+    dag_id=dag_id_to_replace,
+    start_date=datetime(2023, 7, 1),
+    schedule=schedule_to_replace,
+    catchup=False,
+)
+def dag_from_config():
+    BashOperator(
+        task_id="say_hello",
+        bash_command=bash_command_to_replace,
+        env={"ENVVAR": env_var_to_replace},
+    )
 
-with dag:
-    t1 = PostgresOperator(
-        task_id='postgres_query',
-        postgres_conn_id=connection_id
-        sql=querytoreplace)
+
+dag_from_config()

@@ -1,5 +1,6 @@
 {
-    "DagId": "dag_file_2",
-    "Schedule": "'@daily'",
-    "Query":"'SELECT * FROM table2;'"
+    "dag_id": "dag_file_2",
+    "schedule": "'@hourly'",
+    "bash_command": "'echo $ENVVAR and Goodbye!'",
+    "env_var": "'Hola! :)'"
 }
