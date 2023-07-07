@@ -17,7 +17,7 @@ def create_dag(dag_id, schedule, dag_number, default_args):
     return generated_dag
 
 
-# build a dag for each number in range(4)
+# build a dag for each number in range(1, 4)
 for n in range(1, 4):
     dag_id = "loop_hello_world_{}".format(str(n))
 
