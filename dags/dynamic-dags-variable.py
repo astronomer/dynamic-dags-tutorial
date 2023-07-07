@@ -18,7 +18,7 @@ def create_dag(dag_id, schedule, dag_number, default_args):
     return generated_dag
 
 
-number_of_dags = Variable.get("dag_number")
+number_of_dags = Variable.get("dag_number", default_var=3)
 number_of_dags = int(number_of_dags)
 
 for n in range(1, number_of_dags):
