@@ -24,7 +24,7 @@ number_of_dags = int(number_of_dags)
 for n in range(1, number_of_dags):
     dag_id = "variable_hello_world_{}".format(str(n))
 
-    default_args = {"owner": "airflow", "start_date": datetime(2018, 1, 1)}
+    default_args = {"owner": "airflow", "start_date": datetime(2023, 7, 1)}
 
     schedule = "@daily"
     dag_number = n
